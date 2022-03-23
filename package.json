@@ -7,6 +7,7 @@
     },
     "scripts": {
         "start": "export BSC_NETWORK=bscmainnet MATIC_NETWORK=maticmainnet && forever start -a -l forever.log -o out.log -e err.log index.js",
+        "job": "forever start -o winner.log -e win-err.log announceWinners.js && forever start -o events.log -e event-err.log fetchEvents.js",
         "stop": "forever stopall",
         "test": "npm run tests"
     },

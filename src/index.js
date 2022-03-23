@@ -1,5 +1,5 @@
-require("./announceWinners");
-require("./fetchEvents");
+// require("./announceWinners");
+// require("./fetchEvents");
 const db = require("quick.db");
 const express = require("express");
 const app = express();
