@@ -197,7 +197,7 @@ cron.schedule(nft_cron_exp, async () => {
         let lastBlockNumber = await initDB();
         console.log("lastBlockNumber: ", lastBlockNumber);
         try {
-            const events = await lotteryContractSocket.getPastEvents("WinnersAnnounced", {
+            const events = await lotteryContractSocket.getPastEvents("AnnounceWinners", {
                 fromBlock: lastBlockNumber,
                 toBlock: "latest",
             });
