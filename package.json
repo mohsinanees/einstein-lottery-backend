@@ -6,9 +6,12 @@
         "test": "tests"
     },
     "scripts": {
-        "start": "export BSC_NETWORK=bscmainnet MATIC_NETWORK=maticmainnet && forever start -a -l forever.log -o out.log -e err.log ./src/index.js",
-        "job": "forever start -o winner.log -e win-err.log ./src/announceWinners.js && forever start -o events.log -e event-err.log ./src/fetchEvents.js",
-        "stop": "forever stopall",
+        "start": "export NODE_ENV=production && cd src && forever start -a -l forever.log -o ../log/index.log -e ../log/index-err.log index.js",
+        "fetch-events": "cd src && forever start -a -l forever.log -o ../log/events.log -e ../log/event-err.log fetchEvents.js",
+        "announce-winners": "cd src && forever start -a -l forever.log -o ../log/winner.log -e ../log/win-err.log announceWinners.js",
+        "create-games": "cd src && forever start -a -l forever.log -o ../log/games.log -e ../log/games-err.log createGames.js",
+        "stop": "forever stop ./src/index.js",
+        "stop-all": "forever stopall",
         "test": "npm run tests"
     },
     "author": "einstein",

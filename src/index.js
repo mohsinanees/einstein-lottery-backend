@@ -1,4 +1,4 @@
-const db = require("quick.db");
+const db = require("./db");
 const express = require("express");
 const app = express();
 var cors = require("cors");
@@ -27,7 +27,7 @@ app.get("/winners/", async (req, res) => {
     return;
   }
   console.warn("Fetching winners for Pool " + poolId + " Game " + gameNumber);
-  const winners = db.get(`winner.${poolId}.${gameNumber}`);
+  const winners = await db.getItem(`winner.${poolId}.${gameNumber}`);
 
   if (winners) {
     res.status(200).send(winners);
@@ -54,7 +54,7 @@ app.get("/get/voucher/", async (req, res) => {
     return;
   }
   console.warn("Fetching voucher for address " + address);
-  const voucher = await db.get(`voucher.${address}`);
+  const voucher = await db.getItem(`voucher.${address}`);
   if (voucher) {
     res.status(200).send(voucher);
   } else {
@@ -95,7 +95,7 @@ app.post("/store/voucher/", async (req, res) => {
     return;
   }
   const recipient = voucher.recipient;
-  db.set(`voucher.${recipient}`, voucher);
+  db.setItem(`voucher.${recipient}`, voucher);
   res.status(200).send("Voucher stored successfully against the address: " + recipient);
 });
 

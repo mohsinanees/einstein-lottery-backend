@@ -25,7 +25,7 @@ var isCronJobRunning3 = false;
 var isCronJobRunning4 = false;
 var isCronJobRunning5 = false;
 
-async function announceWinners(poolId, gameNumber) {
+async function announceWinners(poolId, latestGameNumber) {
   await db.initDB();
   let gameNumber;
   console.log("latest Game Number: " + latestGameNumber);

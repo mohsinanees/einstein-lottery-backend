@@ -30,7 +30,7 @@ module.exports = {
         bsc_signer_address: "0x1C4A0724DC884076B9196FFf7606623409613Adf",
         winner_cron_exp: "*/1 * * * *",
         lottery_start_block_number:
-            16053906,
+            16929499,
         matic_chainId: 137,
         matic_rpc_provider:
             `https://snowy-late-dawn.matic.quiknode.pro/${matic_quick_node_api_key}/`,
