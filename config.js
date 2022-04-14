@@ -1,7 +1,7 @@
 const { mnemonic, test_mnemonic, bsc_quick_node_api_key, matic_quick_node_api_key, infura_key } = require("./secret.json");
 
 module.exports = {
-    rinkeby: {
+    development: {
         bsc_chainId: 4,
         matic_chainId: 4,
         bsc_rpc_provider:
@@ -12,28 +12,25 @@ module.exports = {
         matic_web_socket_provider: `wss://rinkeby.infura.io/ws/v3/${infura_key}`,
         bsc_mnemonic: test_mnemonic,
         matic_mnemonic: test_mnemonic,
-        lottery_contract_address: "0x4fFd172b847f346Ece030591D5a4ddF637C211ee",
-        nft_contract_address: "0x564B187e9243F7026b290fb9A6029d27bE1c64B8",
-        bsc_signer_address: "0xa6510E349be7786200AC9eDC6443D09FE486Cb40",
+        lottery_contract_address: "0xB6e3913386Fb676CE9bCAaF6D2AB1e1bF53654f4",
+        nft_contract_address: "0x19cA5c1b9a783508D255DE6E82b0ca4792045C81",
+        bsc_signer_address: "0x1C4A0724DC884076B9196FFf7606623409613Adf",
         matic_signer_address: "0x1C4A0724DC884076B9196FFf7606623409613Adf",
         winner_cron_exp: "*/10 * * * * *",
-        nft_cron_exp: "*/10 * * * * *",
-        lottery_start_block_number: 24816676,
+        lottery_start_block_number:
+            10500424,
     },
-    bscmainnet: {
+    production: {
         bsc_chainId: 56,
         bsc_rpc_provider:
             `https://cool-blue-resonance.bsc.quiknode.pro/${bsc_quick_node_api_key}/`,
         bsc_web_socket_provider: `wss://cool-blue-resonance.bsc.quiknode.pro/${bsc_quick_node_api_key}/`,
         bsc_mnemonic: mnemonic,
-        lottery_contract_address: "0xc4a7BB05c222520f67c19984b9950CA694D2a113",
+        lottery_contract_address: "0x1789DaA4fb4E8e7807896dc3c02CdCceca64B23a",
         bsc_signer_address: "0x1C4A0724DC884076B9196FFf7606623409613Adf",
-        winner_cron_exp: "0 0 * * *",
-        nft_cron_exp: "*/5 * * * *",
+        winner_cron_exp: "*/1 * * * *",
         lottery_start_block_number:
             16053906,
-    },
-    maticmainnet: {
         matic_chainId: 137,
         matic_rpc_provider:
             `https://snowy-late-dawn.matic.quiknode.pro/${matic_quick_node_api_key}/`,
